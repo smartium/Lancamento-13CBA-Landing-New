@@ -8,15 +8,15 @@
   src: url("/fonts/margem_medium.otf");
 }
 
-.header {
-  background-color: rgba(255,0,0,.1);
-}
-.content {
-  background-color: rgba(0,255,0,.1);
-}
-.footer {
-  background-color: rgba(0,0,255,.1);
-}
+// .header {
+//   background-color: rgba(255,0,0,.1);
+// }
+// .content {
+//   background-color: rgba(0,255,0,.1);
+// }
+// .footer {
+//   background-color: rgba(0,0,255,.1);
+// }
 
 html, body, span, p, h1, h4 {
   font-family: "Margem Light";
@@ -100,29 +100,48 @@ button {
 
 }
 
-// @media (min-width: 1280px) and (max-width: 1440px) {
-//   .countDownClock {
-//     width: 90vh;
-//     // transform: scale(.3);
-//     // transform-origin: left;
-//     // display: block;
-//   }
-//
-//   .logo-pre {
-//     // display: block;
-//     width: 10vw;
-//     img {
-//       width: 100%;
-//     }
-//   }
-//   html, body {
-//     // width: 1920px;
-//     // height: 1080px;
-//     // transform: scale(.817, .817);
-//     // transform: scaleY(.9);
-//     // transform-origin: top left;
-//   }
-// }
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .countDownClock {
+    width: 100%;
+    transform: scale(.8);
+    transform-origin: left;
+    // display: block;
+    // background-color: red;
+  }
+
+  .logo-pre {
+    // display: block;
+    width: 30vw;
+    img {
+      width: 100%;
+    }
+  }
+  html, body {
+    // width: 1920px;
+    // height: 1080px;
+    // transform: scale(.817, .817);
+    // transform: scaleY(.9);
+    // transform-origin: top left;
+  }
+
+  html, body, span, p, h1, h4, button {
+    font-size: 1.2rem!important;
+  }
+
+  button {
+  }
+
+  .algodao {
+    img {
+      max-width: 40%;
+    }
+  }
+
+  .footer {
+    transform: scale(.6);
+    transform-origin: bottom right;
+  }
+}
 
 @media (max-width: 1279px) {
   .header {
