@@ -1,5 +1,45 @@
+@font-face {
+  font-family: "Margem Light";
+  src: url("/fonts/margem_light.otf");
+}
+
+@font-face {
+  font-family: "Margem Medium";
+  src: url("/fonts/margem_medium.otf");
+}
+
+.header {
+  background-color: rgba(255,0,0,.1);
+}
+.content {
+  background-color: rgba(0,255,0,.1);
+}
+.footer {
+  background-color: rgba(0,0,255,.1);
+}
+
+html, body, span, p, h1, h4 {
+  font-family: "Margem Light";
+}
+
 body {
   overflow: hidden;
+}
+
+h1 {
+  font-family: "Margem Light";
+  font-size: 2.5rem!important;
+}
+
+button {
+  background-color: #163183;
+  color: white;
+  font-size: 3em!important;
+  margin: 50px 0 70px 0!important;
+  padding: 20px 30px 20px 30px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Margem Medium"!important;
 }
 
 .container {
@@ -9,7 +49,6 @@ body {
 }
 
 .header {
-  background-color: rgba(255,0,0,.1);
   display: flex;
   justify-content: space-between;
 
@@ -20,25 +59,33 @@ body {
 
 .content {
   display: flex;
-  // height: 58vh;
+  align-items: center;
+  justify-content: flex-start;
+  // height: 3080px;
+  height: 100%;
   flex-direction: column;
-  background-color: rgba(0,255,0,.1);
 }
 
 .footer {
-  background-color: rgba(0,0,255,.1);
   display: flex;
   justify-content: space-between;
-  font-size: 1.2rem;
+  // align-items: center;
+  // width: 50%;
+  font-size: 1.3rem;
   .fa {
     font-size: 2rem;
   }
   // justify-content: space-around;
   // padding: 10px;
-
+  .right {
+    display: flex;
+    .social {
+      padding: 0 50px 20px 0;
+    }
+  }
 }
 
-.left {
+.algodao {
   // display: flex;
   // width: 20%;
   position: fixed;
@@ -53,13 +100,41 @@ body {
 
 }
 
+// @media (min-width: 1280px) and (max-width: 1440px) {
+//   .countDownClock {
+//     width: 90vh;
+//     // transform: scale(.3);
+//     // transform-origin: left;
+//     // display: block;
+//   }
+//
+//   .logo-pre {
+//     // display: block;
+//     width: 10vw;
+//     img {
+//       width: 100%;
+//     }
+//   }
+//   html, body {
+//     // width: 1920px;
+//     // height: 1080px;
+//     // transform: scale(.817, .817);
+//     // transform: scaleY(.9);
+//     // transform-origin: top left;
+//   }
+// }
+
 @media (max-width: 1279px) {
   .header {
     flex-direction: column;
 
     .countDownClock {
-      padding: 60px;
+      padding: 140px 0 120px 0;
     }
+  }
+
+  .content {
+    justify-content: center;
   }
 
   .logo-pre {
@@ -84,16 +159,28 @@ body {
 
   .footer {
     // flex-direction: column;
+    justify-content: center;
     font-size: 2rem;
     .social {
       padding: 10px;
     }
+
+    .left {
+      display: none;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      .social {
+        padding: 0 50px 20px 0;
+      }
+      // display: none;
+    }
   }
 
-  .left {
-    img {
-      width: 50%;
-    }
+  .algodao {
+    display: none;
   }
 }
 
@@ -102,3 +189,9 @@ body {
 //     display: flex;
 //   }
 // }
+
+.stage-size {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}

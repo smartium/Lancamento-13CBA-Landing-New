@@ -5,23 +5,46 @@ import { ReactiveVar } from 'meteor/reactive-var';
 // import 'bootstrap/dist/js/bootstrap.min';
 import 'font-awesome/css/font-awesome.min.css';
 
+// import './hideaddrbar';
+
 import './main.html';
+
+var stageSize = new ReactiveVar({});
 
 Template.body.onCreated(()=> {
 });
 
 Template.body.onRendered(()=> {
-  stageH = $(window).innerHeight();
-  $('.container').css('height', stageH);
+  stageSize.set({
+    w: $(window).innerWidth(),
+    h: $(window).innerHeight()
+  });
+  // stageW = $(window).innerWidth();
+  // stageH = $(window).innerHeight();
+  $('.container').css('height', stageSize.get().h);
 
   $(window).resize(()=> {
-    stageH = $(window).innerHeight();
-    $('.container').css('height', stageH);
+    stageSize.set({
+      w: $(window).innerWidth(),
+      h: $(window).innerHeight()
+    });
+    $('.container').css('height', stageSize.get().h);
   });
 });
 
 Template.body.helpers({
+  isDevelopment() {
+    return Meteor.isDevelopment ? true : false;
+  },
+
+  stageSize() {
+    return `(${stageSize.get().w} x ${stageSize.get().h})`;
+  }
 });
 
 Template.body.events({
+  'click button'(e) {
+    e.preventDefault();
+    location.reload();
+  },
 });
