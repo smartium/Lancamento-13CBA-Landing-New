@@ -30,6 +30,9 @@ Template.body.onRendered(()=> {
     });
     $('.container').css('height', stageSize.get().h);
   });
+
+  var audio = new Audio('https://lancamento13cba.com.br/audio/musica.mp3');
+  audio.play();
 });
 
 Template.body.helpers({
