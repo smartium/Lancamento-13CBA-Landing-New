@@ -33,6 +33,7 @@ Template.body.onRendered(()=> {
 
   var audio = new Audio('https://lancamento13cba.com.br/audio/musica.mp3');
   audio.play();
+  audio.loop = true;
 });
 
 Template.body.helpers({
